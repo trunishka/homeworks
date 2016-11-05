@@ -5,7 +5,11 @@ try:
     if type(number)== int:
         for i in range(number):
             if i % 2 != 0:
-                print(i)
+                print("not even numbers =", i)
+                i += 1
+        for i in range(number):
+            if i % 2 == 0:
+                print("even numbers = ", i)
                 i +=1
 except ValueError:
     print("insert only integer")
