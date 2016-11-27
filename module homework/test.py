@@ -1,7 +1,9 @@
-import random
-d = dict((i, random.randint(0, 100)) for i in range(5))
-l = lambda x: x[1]
+import os
+srch_file = input("введите название фала")
+x,y,z = (list(os.walk(".")))
+for srch_file in x,y,z:
+    print(srch_file)
 
-print( sorted(d.items(), key=l, ))#reverse=True) )
-
-sorted
+print(x)
+print(y)
+print(z)
