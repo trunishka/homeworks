@@ -26,14 +26,14 @@ while i <= counter:
         else:
             result[element] = 1
     i += 1
-result_lst = list(result.values())
-result_lst = result_lst.sort()
+
+data_file.close()
+
+result_lst = sorted(result.values())
 print(result_lst)
 
 
-print(sorted(result.items(), key = result_lst, reverse = True))
-# for result_lst in sorted(result.values()):
-#     print(result_lst)
-#           # ":", result.values())
-data_file.close()
+print(sorted(result.items()))
+
+
 __all__= (data_file,result,line, counter,elements,result_lst)

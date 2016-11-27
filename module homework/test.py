@@ -1,9 +1,16 @@
 import os
-srch_file = input("введите название фала")
-x,y,z = (list(os.walk(".")))
-for srch_file in x,y,z:
-    print(srch_file)
 
-print(x)
-print(y)
-print(z)
+from sys import argv
+
+
+try: name = (argv[1])
+except:
+    try: name = (input ("Ведите путь и название файла"))
+    except FileNotFoundError:
+         name = (input ("Ведите путь и название файла"))
+
+for root, dirs, files in os.walk("."):
+    if name in files:
+        print(os.path)
+    if name in dirs:
+        print(os.path)
