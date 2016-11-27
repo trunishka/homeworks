@@ -13,19 +13,21 @@ except:
 
 counter = len(data_file.readlines())
 data_file.seek(0)
-
-while i <= counter:
-    line = data_file.readline()
-    line = line.lower()
-    line = line.rstrip()
-    # print(line)
-    elements = list(line)
-    for element in elements:
-        if element in result:
-            result[element] += 1
-        else:
-            result[element] = 1
-    i += 1
+def symbol_count():
+    i = 0
+    while i <= counter:
+        line = data_file.readline()
+        line = line.lower()
+        line = line.rstrip()
+        # print(line)
+        elements = list(line)
+        for element in elements:
+            if element in result:
+                result[element] += 1
+            else:
+                result[element] = 1
+        i += 1
+symbol_count()
 
 data_file.close()
 
@@ -36,4 +38,4 @@ print(result_lst)
 print(sorted(result.items()))
 
 
-__all__= (data_file,result,line, counter,elements,result_lst)
+__all__= ['data_file','result', 'counter', 'result_lst', 'symbol_count']
