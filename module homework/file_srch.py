@@ -14,3 +14,4 @@ for root, dirs, files in os.walk("."):
         print(os.path.join(root, name), os.getcwd())
     if name in dirs:
         print(os.path.join(root, name), os.getcwd())
+__all__ = (name)

@@ -18,7 +18,7 @@ while i <= counter:
     line = data_file.readline()
     line = line.lower()
     line = line.rstrip()
-    print(line)
+    # print(line)
     elements = list(line)
     for element in elements:
         if element in result:
