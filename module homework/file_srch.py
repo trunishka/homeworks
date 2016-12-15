@@ -2,22 +2,26 @@ import os
 
 from sys import argv
 
-x=1
-def path_finder():
-    try: name = (argv[1])
-    except:
-        try: name = (input("Ведите путь и название файла"))
-        except FileNotFoundError:
-             name = (input("Ведите путь и название файла"))
 
-    for root, dirs, files in os.walk("."):
-        if name in files:
-            print(os.path.join(root, name), os.getcwd())
-            symb = (os.getcwd())
-        if name in dirs:
-            print(os.path.join(root, name), os.getcwd())
+def filename():
+    if len(argv) > 1:
+        file_name = argv[1]
+    else:
+        file_name = input("insert the name")
+    while file_name not in os.listdir():
+            file_name = input("insert the name")
+    return file_name
 
 
+def path_finder(x):
+        for root, dirs, files in os.walk("."):
+            if x in files:
+                return((os.path.join(root, x), os.getcwd()))
+            if x in dirs:
+                return(os.path.join(root, x), os.getcwd())
+
+all__ = ['path_finder', 'filename']
 if __name__ == "__main__":
-    path_finder()
-__all__ = ['path_finder', 'x']
+    print(path_finder(filename()))
+    open(path_finder(filename()))
+
